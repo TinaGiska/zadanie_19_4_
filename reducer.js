@@ -38,17 +38,17 @@ function reducer(state = initialState, action) {
 
         case EDIT_COMMENT:
             return Object.assign({}, state, {
-                comments: state.comments.filter(comment => comment.id !== action.id)
+
             });
 
         case THUMB_UP_COMMENT:
             return Object.assign({}, state, {
-                comments: state.comments.filter(comment => comment.id !== action.id)
+
             });
 
         case THUMB_DOWN_COMMENT:
             return Object.assign({}, state, {
-                comments: state.comments.filter(comment => comment.id !== action.id)
+                
             });
         default:
             return state;
