@@ -1,0 +1,25 @@
+{
+  "name": "zadanie_19_4_",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reducer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinaGiska/zadanie_19_4_.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TinaGiska/zadanie_19_4_/issues"
+  },
+  "homepage": "https://github.com/TinaGiska/zadanie_19_4_#readme",
+  "dependencies": {
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  }
+}
