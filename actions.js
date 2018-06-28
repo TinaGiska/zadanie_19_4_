@@ -1,61 +1,58 @@
 
-import uuid from uuid;
-
+import uuid from 'uuid';
 
 const ADD_COMMENT = 'ADD_COMMENT';
+const REMOVE_COMMENT = 'REMOVE_COMMENT';
+const EDIT_COMMENT = 'EDIT_COMMENT';
+const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
+const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
-function addComment(text) {
-    return {
-        type: ADD_COMMENT,
-        text,
-        id: uuid.v4()
-    }
-}
+const addComment = text => {
+	return {
+		type: ADD_COMMENT,
+		text,
+		id: uuid.v4(),
+	};
+};
 
 const boundAddComment = text => dispatch(addComment(text));
 
-boundAddComment('kolejny komentarz!');
+const editComment = text => {
+	return {
+		type: EDIT_COMMENT,
+		text,
+		id,
+	};
+};
 
+const boundEditComment = (text, id) => dispatch(editComment(text, id));
 
-const EDIT_COMMENT = 'EDIT_COMMENT';
+const removeComment = id => {
+	return {
+		type: REMOVE_COMMENT,
+		id,
+	};
+};
 
-function editComment(text) {
-    return {
-        type: EDIT_COMMENT,
-        text,
-        id: uuid.v4()
-    }
-}
+const boundRemoveComment = id => dispatch(removeComment(id));
 
+const thumbUpComment = (id, likes) => {
+	return {
+		type: THUMB_UP_COMMENT,
+		id,
+		likes: likes + 1,
+	};
+};
 
-const DELETE_COMMENT = 'EDIT_COMMENT';
+const boundThumbUpComment = (id, likes) => dispatch(thumbUpComment(id, likes));
 
-function deleteComment(text) {
-    return {
-        type: DELETE_COMMENT,
-        text,
-        id: uuid.v4()
-    }
-}
+const thumbDownComment = (id, dislikes) => {
+	return {
+		type: THUMB_DOWN_COMMENT,
+		id,
+		dislikes: dislikes + 1,
+	};
+};
 
-
-const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
-
-function thumbUp(text) {
-    return {
-        type: THUMB_UP_COMMENT,
-        text,
-        id: uuid.v4()
-    }
-}
-
-
-const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
-
-function thumbDown(text) {
-    return {
-        type: THUMB_DOWN_COMMENT,
-        text,
-        id: uuid.v4()
-    }
-}
+const boundThumbDownComment = (id, likes) =>
+	dispatch(thumbDownComment(id, dislikes));
